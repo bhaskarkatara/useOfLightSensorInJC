@@ -95,12 +95,16 @@ fun MyApp(isImageVisible: Boolean) {
     {
         Text(text = "Put Object in front of your device Sensors(Right to the FrontCamera), SEE the changes",
             modifier = Modifier.padding(top = 30.dp))
-        val source = painterResource(id = R.drawable.img)
-        Image(painter = source, contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.padding(top = 50.dp))
-    }
 
+        if(isImageVisible) {
+            val source = painterResource(id = R.drawable.img)
+            Image(
+                painter = source, contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.padding(top = 50.dp)
+            )
+        }
+    }
 }
 
 
