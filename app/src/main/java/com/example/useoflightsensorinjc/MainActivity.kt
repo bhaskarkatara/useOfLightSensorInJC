@@ -59,10 +59,13 @@ class MainActivity : ComponentActivity(),SensorEventListener {
             if(event!!.values[0] < 30){
                  // how to change image visibility to image Invisibility
                 // ans set background dark
+                Log.d(TAG, "onSensorChanged: + ${event.values[0]}")
                 backgroundColor = Color.DarkGray
                 isImageVisible = false
             }else{
            // image visibility is visible
+                backgroundColor = Color.Yellow
+                isImageVisible = true
             }
         }catch (e:IOException){
             Log.d(TAG, "onSensorChanged: + ${e.message}")
